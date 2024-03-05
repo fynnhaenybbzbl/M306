@@ -4,9 +4,9 @@ CREATE TABLE customer (
                         lastname VARCHAR(40) NOT NULL,
                         birthdate DATE NOT NULL,
                         street VARCHAR(40),
-                        housenumber VARCHAR(8),
+                        streetnumber VARCHAR(8),
                         city VARCHAR(40),
-                        zipcode VARCHAR(8)
+                        zip VARCHAR(8)
 );
 
 CREATE TABLE employee (
