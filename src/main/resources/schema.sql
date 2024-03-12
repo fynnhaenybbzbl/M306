@@ -11,5 +11,7 @@ CREATE TABLE customer (
 
 CREATE TABLE employee (
                                 username VARCHAR(25) PRIMARY KEY NOT NULL,
+                                role VARCHAR(25) NOT NULL,
                                 password VARCHAR(255) NOT NULL
 );
+
