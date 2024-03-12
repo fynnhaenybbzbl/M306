@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+    <h1>Neuen Kunden hinzufügen</h1>
+        <form action="#" method="post" th:action="@{/save}" th:object="${customer}">
+            <label for="firstname-input">Vorname</label><input id="firstname-input" type="text" value="firstname" th:value="${customer.firstName}">
+            <label for="lastname-input">Nachname</label><input id="lastname-input" type="text" value="lastname" th:value="${customer.lastName}">
+            <label for="birthdate-input">Geburtsdatum</label><input id="birthdate-input" type="text" value="birthdate" th:value="${customer.birthdate}">
+            <label for="street-input">Strasse</label><input id="street-input" type="text" value="street" th:value="${customer.street}">
+            <label for="housenumber-input">Hausnummer</label><input id="housenumber-input" type="text" value="housenumber" th:value="${customer.streetNumber}">
+            <label for="city-input">Stadt</label><input id="city-input" type="text" value="city" th:value="${customer.city}">
+            <label for="zipcode-input">Postleitzahl</label><input id="zipcode-input" type="text" value="zip" th:value="${customer.zip}">
+            <input type="submit">
+         </form>
+</body>
+</html>
