@@ -15,5 +15,6 @@ import org.springframework.validation.annotation.Validated;
 public class Employee {
     @Id
     private String username;
+    private String role;
     private String password;
 }
