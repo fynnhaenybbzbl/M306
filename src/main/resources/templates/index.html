@@ -32,7 +32,7 @@
                     <td th:text="${customer.city}"></td>
                     <td th:text="${customer.zip}"></td>
                     <td>
-                        <a class="button" th:href="@{/deleteCustomer/{id}(id=${customer.id})}">Löschen</a>
+                        <a class="button" th:href="@{/deleteCustomer?{id}(id=${customer.id})}">Löschen</a>
                     </td>
                 </tr>
             </tbody>

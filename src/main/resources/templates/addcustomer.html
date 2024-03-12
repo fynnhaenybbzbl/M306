@@ -8,13 +8,13 @@
 <body>
     <h1>Neuen Kunden hinzufügen</h1>
         <form action="#" method="post" th:action="@{/save}" th:object="${customer}">
-            <label for="firstname-input">Vorname</label><input id="firstname-input" type="text" value="firstname" th:value="${customer.firstName}">
-            <label for="lastname-input">Nachname</label><input id="lastname-input" type="text" value="lastname" th:value="${customer.lastName}">
-            <label for="birthdate-input">Geburtsdatum</label><input id="birthdate-input" type="text" value="birthdate" th:value="${customer.birthdate}">
-            <label for="street-input">Strasse</label><input id="street-input" type="text" value="street" th:value="${customer.street}">
-            <label for="housenumber-input">Hausnummer</label><input id="housenumber-input" type="text" value="housenumber" th:value="${customer.streetNumber}">
-            <label for="city-input">Stadt</label><input id="city-input" type="text" value="city" th:value="${customer.city}">
-            <label for="zipcode-input">Postleitzahl</label><input id="zipcode-input" type="text" value="zip" th:value="${customer.zip}">
+            <label for="firstname-input">Vorname</label><input id="firstname-input" name="firstName" type="text" value="firstname" th:value="${customer.firstName}">
+            <label for="lastname-input">Nachname</label><input id="lastname-input" name="lastName" type="text" value="lastname" th:value="${customer.lastName}">
+            <label for="birthdate-input">Geburtsdatum</label><input id="birthdate-input" name="birthdate" type="text" value="birthdate" th:value="${customer.birthdate}">
+            <label for="street-input">Strasse</label><input id="street-input" name="street" type="text" value="street" th:value="${customer.street}">
+            <label for="housenumber-input">Hausnummer</label><input id="housenumber-input" name="streetNumber" type="text" value="housenumber" th:value="${customer.streetNumber}">
+            <label for="city-input">Stadt</label><input id="city-input" type="text" name="city" value="city" th:value="${customer.city}">
+            <label for="zipcode-input">Postleitzahl</label><input id="zipcode-input" name="zip" type="text" value="zip" th:value="${customer.zip}">
             <input type="submit">
          </form>
 </body>

@@ -5,8 +5,11 @@ import com.m306.tablesession.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CustomerController {
@@ -26,8 +29,14 @@ public class CustomerController {
         return "addcustomer";
     }
 
+    @RequestMapping(value="/deleteCustomer", method=RequestMethod.GET)
+    public void deleteCustomer(@RequestParam long id) {
+        customerService.deleteCustomer(id);
+    }
+
     @RequestMapping(value="/save", method=RequestMethod.POST, consumes="application/x-www-form-urlencoded;charset=UTF-8")
-    public String saveCustomer(Customer customer) {
+    public String saveCustomer(Model model, @ModelAttribute(name = "customer") Customer customer) {
+        System.out.println(customer);
         customerService.insertCustomer(customer);
         return "redirect:/";
     }

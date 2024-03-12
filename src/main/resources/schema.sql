@@ -1,10 +1,10 @@
 CREATE TABLE customer (
-                        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-                        firstname VARCHAR(40) NOT NULL,
-                        lastname VARCHAR(40) NOT NULL,
+                        id SERIAL PRIMARY KEY NOT NULL,
+                        first_name VARCHAR(40) NOT NULL,
+                        last_name VARCHAR(40) NOT NULL,
                         birthdate DATE NOT NULL,
                         street VARCHAR(40),
-                        streetnumber VARCHAR(8),
+                        street_number VARCHAR(8),
                         city VARCHAR(40),
                         zip VARCHAR(8)
 );

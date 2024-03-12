@@ -37,7 +37,6 @@ public class BasicConfiguration {
                     .roles(employee.getRole())
                     .build();
             userDetailsList.add(userDetails);
-            System.out.println(userDetailsList);
         }
 
         return new InMemoryUserDetailsManager(userDetailsList);
