@@ -3,7 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title>Kunden</title>
+        <link rel="stylesheet" href="../style/styles.css">
     </head>
+
+    <script th:inline="javascript">
+
+        function deleteEmployee() {
+            let url = /*[[@{/deleteEmployee?username=}]]*/
+            window.location = url + document.getElementById('employee-input').value
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,7 +88,16 @@
     <body>
 
         <h1>Kundenliste</h1>
-        <button class="add-button" onclick="location.href='/addnew'">Kunde hinzufügen</button>
+        <button class="add-button" onclick="location.href='/addCustomer'">Kunde hinzufügen</button>
+        <button class="add-button" onclick="location.href='/addEmployee'">Mitarbeiter hinzufügen</button>
+
+        <div class="delete-employee">
+            <label for="employee-input">Mitarbeiter löschen</label>
+            <input type="text" id="employee-input" placeholder="Benutzername">
+            <button class="add-button" onclick="deleteEmployee()">Löschen</button>
+        </div>
+
+
         <table>
             <thead>
                 <tr>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+<h1>Neuen Mitarbeiter hinzufügen</h1>
+<form action="#" method="post" th:action="@{/saveEmployee}" th:object="${employee}">
+    <label for="username-input">Benutzername</label><input id="username-input" name="username" type="text" value="username" th:value="${employee.username}">
+    <label for="role-input">Rolle</label><input id="role-input" name="role" type="text" value="role" th:value="${employee.role}">
+    <label for="password-input">Passwort</label><input id="password-input" name="password" type="text" value="password" th:value="${employee.password}">
+    <input type="submit">
+</form>
+</body>
+</html>

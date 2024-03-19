@@ -1,8 +1,7 @@
 package com.m306.tablesession.service;
 
-import com.m306.tablesession.repository.model.Customer;
 import com.m306.tablesession.repository.CustomerRepository;
-import jakarta.annotation.security.RolesAllowed;
+import com.m306.tablesession.repository.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,7 @@ public class CustomerService {
             customerRepository.delete(presentCustomer);
         }
     }
-    public Customer insertCustomer(Customer clothing) {
-        return customerRepository.save(clothing);
+    public Customer insertCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
 }
