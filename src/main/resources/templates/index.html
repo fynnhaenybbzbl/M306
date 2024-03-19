@@ -31,7 +31,7 @@
     }
 
     .add-button {
-        background-color: #4caf50;
+        background-color: #086cdc;
         color: #fff;
         padding: 10px 20px;
         border: none;
@@ -41,7 +41,7 @@
     }
 
     .add-button:hover {
-        background-color: #38761d;
+        background-color: #075fc3;
     }
 
     .delete-employee {
@@ -106,31 +106,31 @@
         }
     </style>
     <body>
-        <button class="add-button" onclick="location.href='/logout'">Ausloggen</button>
+        <button class="add-button" onclick="location.href='/logout'">Logout</button>
 
-<h1>Kundenliste</h1>
+<h1>Customer list</h1>
 
 <div class="button-group">
-    <button class="add-button" onclick="location.href='/addCustomer'">Kunde hinzufügen</button>
-    <button class="add-button" onclick="location.href='/addEmployee'">Mitarbeiter hinzufügen</button>
+    <button class="add-button" onclick="location.href='/addCustomer'">Add Customer</button>
+    <button class="add-button" onclick="location.href='/addEmployee'">Add Employee</button>
     <div class="delete-employee">
-        <label for="employee-input">Mitarbeiter löschen</label>
-        <input type="text" id="employee-input" placeholder="Benutzername">
-        <button class="button" onclick="deleteEmployee()">Löschen</button>
+        <label for="employee-input">Delete Employee</label>
+        <input type="text" id="employee-input" placeholder="Username">
+        <button class="button" onclick="deleteEmployee()">Delete</button>
     </div>
 </div>
 
 <table>
     <thead>
     <tr>
-        <th>Nachname</th>
-        <th>Vorname</th>
-        <th>Geburtsdatum</th>
-        <th>Strasse</th>
-        <th>Hausnummer</th>
-        <th>Stadt</th>
-        <th>Postleitzahl</th>
-        <th>Aktionen</th>
+        <th>Lastname</th>
+        <th>Firstname</th>
+        <th>Birthdate</th>
+        <th>Street</th>
+        <th>Housenumber</th>
+        <th>City</th>
+        <th>Zip</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -143,7 +143,7 @@
         <td th:text="${customer.city}"></td>
         <td th:text="${customer.zip}"></td>
         <td>
-            <a class="button" th:href="@{/deleteCustomer(id=${customer.id})}">Löschen</a>
+            <a class="button" th:href="@{/deleteCustomer(id=${customer.id})}">Delete</a>
         </td>
     </tr>
     </tbody>
