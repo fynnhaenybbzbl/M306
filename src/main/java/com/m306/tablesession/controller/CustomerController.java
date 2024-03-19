@@ -30,8 +30,9 @@ public class CustomerController {
     }
 
     @RequestMapping(value="/deleteCustomer", method=RequestMethod.GET)
-    public void deleteCustomer(@RequestParam long id) {
-        customerService.deleteCustomer(id);
+    public String deleteCustomer(@RequestParam String id) {
+        customerService.deleteCustomer(Long.parseLong(id));
+        return "redirect:/";
     }
 
     @RequestMapping(value="/save", method=RequestMethod.POST, consumes="application/x-www-form-urlencoded;charset=UTF-8")
