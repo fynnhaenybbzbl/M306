@@ -1,10 +1,152 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Thymeleaf Example</title>
+    <meta charset="utf-8">
+    <title>Kunden</title>
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body>
-<h1>Hello, Thymeleaf!</h1>
+
+<script th:inline="javascript">
+    function deleteEmployee() {
+        let url = /*[[@{/deleteEmployee?username=}]]*/
+            window.location = url + document.getElementById('employee-input').value
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 20px; /* Änderung der Positionierung */
+    }
+
+    .add-button {
+        background-color: #086cdc;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px; /* Änderung der Positionierung */
+    }
+
+    .add-button:hover {
+        background-color: #075fc3;
+    }
+
+    .delete-employee {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px; /* Platzierung des Bereichs oberhalb der Tabelle */
+    }
+
+    .delete-employee label {
+        margin-right: 10px;
+    }
+
+    .delete-employee input[type="text"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .delete-employee .add-button {
+        margin-left: 10px;
+        margin-top: 0; /* Entfernen des oberen Abstands */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    thead {
+        background-color: #f2f2f2;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .button {
+        background-color: #ff3333;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+        .button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+    <body>
+        <button class="add-button" onclick="location.href='/logout'">Logout</button>
+
+<h1>Customer list</h1>
+
+<div class="button-group">
+    <button class="add-button" onclick="location.href='/addCustomer'">Add Customer</button>
+    <button class="add-button" onclick="location.href='/addEmployee'">Add Employee</button>
+    <div class="delete-employee">
+        <label for="employee-input">Delete Employee</label>
+        <input type="text" id="employee-input" placeholder="Username">
+        <button class="button" onclick="deleteEmployee()">Delete</button>
+    </div>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Lastname</th>
+        <th>Firstname</th>
+        <th>Birthdate</th>
+        <th>Street</th>
+        <th>Housenumber</th>
+        <th>City</th>
+        <th>Zip</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer:${customerList}">
+        <td th:text="${customer.lastName}"></td>
+        <td th:text="${customer.firstName}"></td>
+        <td th:text="${customer.birthdate}"></td>
+        <td th:text="${customer.street}"></td>
+        <td th:text="${customer.streetNumber}"></td>
+        <td th:text="${customer.city}"></td>
+        <td th:text="${customer.zip}"></td>
+        <td>
+            <a class="button" th:href="@{/deleteCustomer(id=${customer.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
