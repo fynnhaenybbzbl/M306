@@ -5,6 +5,54 @@
     <title>Title</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    form input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #38761d;
+    }
+
+</style>
 <body>
 <h1>Neuen Mitarbeiter hinzufügen</h1>
 <form action="#" method="post" th:action="@{/saveEmployee}" th:object="${employee}">
