@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <style>
     body {
@@ -48,6 +47,17 @@
         cursor: pointer;
     }
 
+    .grid-item {
+        padding: 1px;
+        text-align: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 5px;
+    }
+
     form input[type="submit"]:hover {
         background-color: #086cdc;
     }
@@ -56,9 +66,25 @@
 <body>
 <h1>Add new Employee</h1>
 <form action="#" method="post" th:action="@{/saveEmployee}" th:object="${employee}">
-    <label for="username-input">Username</label><input id="username-input" name="username" type="text" value="username" th:value="${employee.username}">
+    <p>Which role should the employee have</p>
+    <div class="grid-container">
+        <div class="grid-item">
+            <input type="radio" id="role-input1" name="role" value="admin" th:value="${employee.role}">
+            <label for="role-input1">Admin</label>
+        </div>
+        <div class="grid-item">
+            <input type="radio" id="role-input2" name="role" value="employee" th:value="${employee.role}">
+            <label for="role-input2">Mitarbeiter</label>
+        </div>
+    </div>
+    <label for="username-input">Username</label><input id="username-input" name="username" type="text" value="username"
+                                                       th:value="${employee.username}">
+    <!--
     <label for="role-input">Role</label><input id="role-input" name="role" type="text" value="role" th:value="${employee.role}">
-    <label for="password-input">Password</label><input id="password-input" name="password" type="text" value="password" th:value="${employee.password}">
+-->
+    <label for="password-input">Password</label><input id="password-input" name="password" type="text"
+                                                       value="password"
+                                                       th:value="${employee.password}">
     <input type="submit" value="Send">
 </form>
 </body>
