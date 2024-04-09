@@ -3,9 +3,9 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
   datasource:
-    url: jdbc:postgresql://localhost:5432/m306test
-    username: test
-    password: test
+    url: jdbc:postgresql://10.0.0.5:5432/m306
+    username: M306User
+    password: 1234
   jpa:
     hibernate:
       ddl-auto: none
