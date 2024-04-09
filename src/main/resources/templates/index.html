@@ -101,22 +101,38 @@
         text-decoration: none;
     }
 
-        .button:hover {
-            background-color: #cc0000;
-        }
-    </style>
-    <body>
-        <button class="add-button" onclick="location.href='/logout'">Logout</button>
+    .grid-item {
+        padding: 20px;
+        text-align: center;
+    }
 
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+
+    .button:hover {
+        background-color: #cc0000;
+    }
+</style>
+<body>
 <h1>Customer list</h1>
 
 <div class="button-group">
-    <button class="add-button" onclick="location.href='/addCustomer'">Add Customer</button>
-    <button class="add-button" onclick="location.href='/addEmployee'">Add Employee</button>
-    <div class="delete-employee">
-        <label for="employee-input">Delete Employee</label>
-        <input type="text" id="employee-input" placeholder="Username">
-        <button class="button" onclick="deleteEmployee()">Delete</button>
+    <div class="grid-container">
+        <div class="grid-item">
+            <button class="add-button" onclick="location.href='/addCustomer'">Add Customer</button>
+        </div>
+        <div class="grid-item">
+            <button class="add-button" onclick="location.href='/addEmployee'" title="Nur für Admin">Add Employee
+            </button>
+        </div>
+        <div class="delete-employee" title="Nur für Admins">
+            <label for="employee-input">Delete Employee</label>
+            <input type="text" id="employee-input" placeholder="Username">
+            <button class="button" onclick="deleteEmployee()">Delete</button>
+        </div>
     </div>
 </div>
 
@@ -148,5 +164,7 @@
     </tr>
     </tbody>
 </table>
+<button class="add-button" onclick="location.href='/logout'">Logout</button>
+
 </body>
 </html>
